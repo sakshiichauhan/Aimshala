@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Camera } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
-import Kyc2 from '../../../assets/Consultant/ConsulatntEkyc/Kyc2.png';
-import profileImaage from '../../../assets/Consultant/BecomeConsultant/image1.png';
+import React, { useState } from "react";
+import { Camera } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import Kyc2 from "../../../assets/Consultant/ConsulatntEkyc/Kyc2.png";
+import profileImaage from "../../../assets/Consultant/BecomeConsultant/image1.png";
 
 const KycForm5 = () => {
   const [profileImage, setProfileImage] = useState(null);
@@ -18,14 +18,14 @@ const KycForm5 = () => {
   };
 
   const [formData, setFormData] = useState({
-    fullName: '',
-    gender: '',
-    dob: ''
+    fullName: "",
+    gender: "",
+    dob: "",
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form data:', formData);
+    console.log("Form data:", formData);
   };
 
   const handleChange = (e) => {
@@ -35,7 +35,6 @@ const KycForm5 = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-[#FFF5FF] to-[#F0F8F8] font-poppins">
       <div className="bg-white rounded-lg shadow-lg flex w-[972px] h-[682.59px] border border-[#E5E7EB]">
-        {/* Left Section */}
         <div className="w-[587px] h-[682.59px] border-r border-[#E5E7EB] pt-[62px] pr-[32px] pb-[62px] pl-[32px] flex flex-col justify-center">
           <h1 className="text-[28px] font-bold text-[#000000] mb-6 text-center">
             Verify Your Identity with Aadhaar
@@ -46,7 +45,8 @@ const KycForm5 = () => {
               <div className="text-left w-full bg-[#93268F]/4 mb-2 flex items-center gap-2">
                 <div className="w-[3px] h-[30px] bg-[#94278F]" />
                 <h1 className="text-[20px] font-bold text-[#1E232C]">
-                  Review <span className="text-[#94278F]">Personal Details</span>
+                  Review{" "}
+                  <span className="text-[#94278F]">Personal Details</span>
                 </h1>
               </div>
               <p className="text-[16px] text-[#989898] mb-8">
@@ -78,7 +78,7 @@ const KycForm5 = () => {
                     />
                   </div>
                 </div>
-                {/* Full Name */}
+
                 <div className="relative w-[521px]">
                   <label className="absolute -top-2 left-2 bg-white px-1.5 text-sm text-[#000000]">
                     Full Name
@@ -94,7 +94,6 @@ const KycForm5 = () => {
                   />
                 </div>
 
-                {/* Gender */}
                 <div className="relative w-[521px]">
                   <label className="absolute -top-2 left-2 bg-white px-1.5 text-sm text-[#000000]">
                     Gender
@@ -113,7 +112,6 @@ const KycForm5 = () => {
                   </select>
                 </div>
 
-                {/* Date of Birth */}
                 <div className="relative w-[521px]">
                   <label className="absolute -top-2 left-2 bg-white px-1.5 text-sm text-[#000000]">
                     Date of Birth
@@ -133,7 +131,7 @@ const KycForm5 = () => {
                 <button
                   type="submit"
                   className="w-[202px] py-3 bg-[#94278F] text-white rounded-lg hover:bg-[#7A206F] transition-colors font-poppins font-medium h-[46px]"
-                  onClick={() => navigate('/kyc-form-6')}
+                  onClick={() => navigate("/kyc-form-6")}
                 >
                   Next
                 </button>
@@ -144,11 +142,7 @@ const KycForm5 = () => {
 
         {/* Right Section - Image */}
         <div className="w-[385px] h-full flex flex-col items-center justify-center pl-8">
-          <img 
-            src={Kyc2} 
-            alt="Verification" 
-            className="w-[208px] h-[208px]"
-          />
+          <img src={Kyc2} alt="Verification" className="w-[208px] h-[208px]" />
           <div className="text-[14px] font-poppins font-semibold leading-none tracking-normal text-[#4D4D4D] mt-2 text-center capitalize">
             Data Protection Guaranteed
           </div>

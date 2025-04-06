@@ -1,20 +1,19 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Kyc1 from '../../../assets/Consultant/ConsulatntEkyc/Kyc1.png';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Kyc1 from "../../../assets/Consultant/ConsulatntEkyc/Kyc1.png";
 
 const KycForm3 = () => {
-  const [panNumber, setPanNumber] = useState('');
+  const [panNumber, setPanNumber] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Verifying PAN:', panNumber);
+    console.log("Verifying PAN:", panNumber);
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-[#FFF5FF] to-[#F0F8F8] font-poppins">
       <div className="bg-white rounded-lg shadow-lg flex w-[972px] h-[682.59px] border border-[#E5E7EB]">
-        {/* Left Section */}
         <div className="w-[587px] h-[682.59px] border-r border-[#E5E7EB] pt-[62px] pr-[32px] pb-[62px] pl-[32px] flex flex-col justify-center">
           <h1 className="text-[28px] font-bold text-[#000000] mb-6 text-center">
             Verify Your Identity
@@ -24,7 +23,8 @@ const KycForm3 = () => {
               <div className="text-left w-full bg-[#93268F]/4 mb-2 flex items-center gap-2">
                 <div className="w-[3px] h-[30px] bg-[#94278F]" />
                 <h1 className="text-[20px] font-bold text-[#1E232C]">
-                  Provide <span className="text-[#94278F]">PAN Card Number</span>
+                  Provide{" "}
+                  <span className="text-[#94278F]">PAN Card Number</span>
                 </h1>
               </div>
               <p className="text-[16px] text-[#989898] mb-8">
@@ -53,7 +53,7 @@ const KycForm3 = () => {
                 <button
                   type="submit"
                   className="w-[202px] py-3 bg-[#94278F] text-white rounded-lg hover:bg-[#7A206F] transition-colors font-poppins font-medium h-[46px]"
-                  onClick={() => navigate('/kyc-form-4')}
+                  onClick={() => navigate("/kyc-form-4")}
                 >
                   Verify
                 </button>
@@ -62,13 +62,8 @@ const KycForm3 = () => {
           </div>
         </div>
 
-        {/* Right Section - Image */}
         <div className="w-[385px] h-full flex flex-col items-center justify-center pl-8">
-          <img 
-            src={Kyc1} 
-            alt="Verification" 
-            className="w-[208px] h-[208px]"
-          />
+          <img src={Kyc1} alt="Verification" className="w-[208px] h-[208px]" />
           <div className="text-[14px] font-poppins font-semibold leading-none tracking-normal text-[#4D4D4D] mt-2 text-center capitalize">
             Data Protection Guaranteed
           </div>
