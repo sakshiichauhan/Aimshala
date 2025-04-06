@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import Kyc1 from "../../../assets/Consultant/ConsulatntEkyc/Kyc1.png";
 
 const KycForm1 = () => {
+       const navigate = useNavigate();
   const [selectedOption, setSelectedOption] = useState("individual");
 
   const handleOptionChange = (option) => {
@@ -82,7 +84,10 @@ const KycForm1 = () => {
           </div>
 
           <div className="mt-6 flex justify-center">
-            <button className="h-[46PX] w-[108PX] bg-[#94278F] text-white text-lg border-[1px] rounded-[18PX] hover:bg-[#7A206F]">
+            <button
+              className="h-[46PX] w-[108PX] bg-[#94278F] text-white text-lg border-[1px] rounded-[18PX] hover:bg-[#7A206F]"
+              onClick={() => navigate('/kyc-form-2')}
+            >
               Next
             </button>
           </div>
