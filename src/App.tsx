@@ -3,6 +3,7 @@ import Navbar from "./layout/Navbar";
 import ConsultantForm1 from "./pages/Consultant/BecomeConsultant/ConsultantForm1";
 import ConsultantForm2 from "./pages/Consultant/BecomeConsultant/ConsultantForm2";
 import ConsultantForm3 from "./pages/Consultant/BecomeConsultant/ConsultantForm3";
+import KycForm1 from "./pages/Consultant/consultantEkyc/KycForm1"
 
 function App() {
   return (
@@ -18,6 +19,11 @@ function App() {
         <Route
           path="/consultant/become-consultant/form3"
           element={<ConsultantForm3 />}
+        />
+     
+      <Route
+          path="/consultant/consultant-ekyc/form1"
+          element={<KycForm1 />}
         />
       </Routes>
     </BrowserRouter>
