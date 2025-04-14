@@ -78,9 +78,18 @@ const CareerConsultationForm2 = () => {
     after:rotate-45 after:scale-0 checked:after:scale-100 duration-200 \
     ease-in-out";
 
-    return (
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-[#FFF5FF] to-[#F0F8F8] font-poppins">
-        <div className="w-[791px] bg-white rounded-lg shadow-lg pt-6 pb-8 px-8 flex flex-col gap-6">
+    
+  return (
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-[#FFF5FF] to-[#F0F8F8] font-poppins">
+      <div className="w-[791px] bg-white rounded-lg shadow-lg">
+        
+        <div className="bg-[#F5F5F5] rounded-t-lg flex items-center gap-[16px] min-h-[60px] px-6">
+          <h1 className="text-lg font-semibold">Edit Expertise</h1>
+        </div>
+
+  
+        <div className="pt-6 pb-8 px-8 flex flex-col gap-6">
+         
           <div className="rounded-[12px] border border-[#E5E7EB] p-4 flex items-center gap-4">
             <img
               src={AcademicNew}
@@ -96,9 +105,9 @@ const CareerConsultationForm2 = () => {
               </p>
             </div>
           </div>
-  
-          {/* Expertise Title */}
-          <div className="relative">
+
+       
+          <div className="relative w-[725px]">
             <label className="absolute -top-2 left-2 bg-white px-1 text-[14px] text-[#000000]">
               Expertise Title
             </label>
@@ -107,28 +116,28 @@ const CareerConsultationForm2 = () => {
               placeholder="Enter Expertise Title"
               value={expertiseTitle}
               onChange={(e) => setExpertiseTitle(e.target.value)}
-              className="w-full p-3 pl-[16px] border border-[#DCDCDC] rounded-md focus:outline-none focus:ring-2 focus:ring-[#94278F]/20 placeholder-[#898989]"
+              className="w-full h-[57px] pt-[14.5px] pb-[14.5px] px-[16px] border-[1px] border-[#DCDCDC] rounded-[8px] focus:outline-none focus:ring-[#94278F]/20 placeholder-[#898989] placeholder:text-[18px] font-poppins"
             />
           </div>
-  
-          {/* Description */}
+
+         
           <div className="relative w-[725px] rounded-[8px] border border-[#DCDCDC] pt-[14.5px] pr-[16px] pb-[12px] pl-[16px] flex flex-col gap-2.5">
             <label className="absolute -top-2 left-2 bg-white px-1 text-[14px] text-[#000000]">
               Description
             </label>
             <textarea
-              rows="3"
               placeholder="Enter Description about expertise"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               maxLength={250}
-              className="w-full p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-[#94278F]/20 resize-none placeholder-[#898989] placeholder:text-[18px]"
+              className="w-full  rounded-md focus:outline-none focus:ring-[#94278F]/20 resize-none placeholder-[#898989] placeholder:text-[18px]"
             />
             <div className="text-right text-sm text-[#898989]">
               {description.length} / 250
             </div>
           </div>
-  
+
+        
           <section>
             <h2 className="text-lg font-semibold mb-3">
               Primary Areas of Expertise
@@ -151,15 +160,16 @@ const CareerConsultationForm2 = () => {
               ))}
             </div>
           </section>
-  
+
+       
           <section>
             <div className="flex flex-col gap-2 mb-3">
               <h2 className="text-lg font-semibold">Target Group</h2>
-              <div className="text-[16px] font-semibold text-[#787878]">
+              <div className="text-[16px] font-semibold text-[#787878] mt-2">
                 Professionals
               </div>
             </div>
-            <div className="flex gap-6">
+            <div className="flex justify-start gap-4">
               {targetGroupList.map(({ key, label }) => (
                 <label
                   key={key}
@@ -177,24 +187,28 @@ const CareerConsultationForm2 = () => {
               ))}
             </div>
           </section>
-  
-          <div className="flex justify-between items-center pt-4 gap-[10px]">
-            <button
-              onClick={handleDelete}
-              className="text-[#000000] text-[20px] font-medium"
-            >
-              Delete Expertise
-            </button>
+        </div>
+
+    
+        <div className="bg-[#F5F5F5] rounded-b-lg flex items-center justify-between px-[24px] py-[16px] w-[791px] h-[78px]">
+          <button
+            onClick={handleDelete}
+            className="text-[#000000] text-[18px] font-medium hover:text-red-700"
+          >
+            Delete Expertise
+          </button>
+          <div className="flex gap-[10px]">
             <button
               onClick={handleSave}
-              className="bg-[#94278F] text-white w-[170px] h-[46px] rounded-[12px] text-sm font-medium hover:bg-[#7A206F] transition-colors flex items-center justify-center"
+              className="w-[170px] h-[46px] bg-[#94278F] text-white text-[20px] rounded-[12px] hover:bg-[#7A206F] transition-colors"
             >
               Save
             </button>
           </div>
         </div>
       </div>
-    );
-  };
-  
-  export default CareerConsultationForm2;
+    </div>
+  );
+};
+
+export default CareerConsultationForm2;

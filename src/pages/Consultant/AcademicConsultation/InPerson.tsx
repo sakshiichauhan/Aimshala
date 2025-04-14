@@ -1,18 +1,27 @@
 import React, { useState } from "react";
-import { Video } from "lucide-react";
+import { MapPin } from 'lucide-react';
 
-const OneOnOneForm6 = () => {
+const InPerson = () => {
   const [availability, setAvailability] = useState("acceptBookings");
   const [pricingOption, setPricingOption] = useState("fixedPrice");
   const [callDuration, setCallDuration] = useState("60");
   const [haveTimeExtension, setHaveTimeExtension] = useState(true);
 
+  const checkboxClass =
+  "appearance-none cursor-pointer w-[21px] h-[21px] rounded-[4px] \
+  border-2 border-[#94278F] transition-colors checked:bg-[#FFFFFF] \
+  checked:border-[#94278F] relative after:content-[''] after:absolute \
+  after:top-[3px] after:left-[7px] after:w-[5px] after:h-[11px] \
+  after:border-r-[2px] after:border-b-[2px] after:border-[#94278F] \
+  after:rotate-45 after:scale-0 checked:after:scale-100 duration-200 \
+  ease-in-out";
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-[#FFF5FF] font-poppins">
       <div className="w-full max-w-[791px] bg-white rounded-lg shadow-lg">
-        <div className="bg-[#F5F5F5] rounded-t-lg flex items-center gap-4 min-h-[60px] px-6">
-          <Video className="w-9 h-9 text-black" />
-          <h1 className="text-lg font-semibold">1:1 Call</h1>
+        <div className="bg-[#F5F5F5]/50 rounded-t-lg flex items-center gap-4 min-h-[60px] px-6">
+          <MapPin className="w-9 h-9 text-black" />
+          <h1 className="text-lg font-semibold">In-Person</h1>
         </div>
 
         <div className="p-8 flex flex-col gap-6">
@@ -52,8 +61,8 @@ const OneOnOneForm6 = () => {
                   onClick={() => setCallDuration(duration)}
                   className={`w-[129px] h-[43px] flex items-center justify-center rounded-[40px] border text-[18px] transition-all duration-200 ease-in-out rotate-[-0.28deg] ${
                     callDuration === duration
-                      ? " border-[#94278F] text-[#94278F] bg-white"
-                      : " border-[#DCDCDC] text-[#000000] bg-white"
+                      ? "border-[#94278F] text-[#94278F] bg-white"
+                      : "border-[#DCDCDC] text-[#000000] bg-white"
                   }`}
                 >
                   {duration} Minutes
@@ -81,7 +90,7 @@ const OneOnOneForm6 = () => {
                 value="quoteManually"
                 checked={pricingOption === "quoteManually"}
                 onChange={(e) => setPricingOption(e.target.value)}
-                className="accent-[#94278F] w-[20px] h-[20px] border-2"
+                className="accent-[#94278F] w-[20px] h-[20px]"
               />
               I will quote prices manually.
             </label>
@@ -116,7 +125,7 @@ const OneOnOneForm6 = () => {
                 type="checkbox"
                 checked={haveTimeExtension}
                 onChange={(e) => setHaveTimeExtension(e.target.checked)}
-                className="accent-[#94278F] w-[20px] h-[20px] rounded"
+                className={checkboxClass}
               />
               Have Time Extension
             </label>
@@ -162,7 +171,7 @@ const OneOnOneForm6 = () => {
             </div>
           </div>
         </div>
-        <div className="bg-[#F5F5F5] rounded-t-lg flex items-center  px-[24px] py-[16px] w-[791px] h-[78px]  min-h-[60px] px-6">
+        <div className="bg-[#F5F5F5] rounded-t-lg flex items-center  px-[24px] py-[16px] w-[791px] h-[78px]  min-h-[60px]">
           <div className="w-full flex justify-center items-center gap-[10px]">
             <button className="w-[170px] h-[46px] bg-[#94278F] text-white text-[20px] rounded-[12px] hover:bg-[#7A206F] transition-colors">
               Save
@@ -174,4 +183,4 @@ const OneOnOneForm6 = () => {
   );
 };
 
-export default OneOnOneForm6;
+export default InPerson;

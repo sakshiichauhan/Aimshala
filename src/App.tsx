@@ -21,7 +21,8 @@ import KycForm6 from "./pages/Consultant/consultantEkyc/KycForm6";
 import DashboardLayout from "./pages/Consultant/Dashboard/Layout";
 import AcademicConsultationForm1 from "./pages/Consultant/AcademicConsultation/AcademicConsultationForm1";
 import CareerConsultationForm2 from "./pages/Consultant/AcademicConsultation/CareerConsultationForm2";
-import OneOnOneForm6 from "./pages/Consultant/AcademicConsultation/oneononeForm6";;
+import OneOnOneForm6 from "./pages/Consultant/AcademicConsultation/oneononeForm6";
+import InPerson from "./pages/Consultant/AcademicConsultation/InPerson";
 
 function AppLayout() {
   const location = useLocation();
@@ -66,6 +67,10 @@ function AppLayout() {
         <Route
           path="/oneononeForm6"
           element={<OneOnOneForm6 />}
+          />
+           <Route
+          path="/inperson"
+          element={<InPerson />}
           />
 
         <Route path="/consultant/dashboard" element={<DashboardLayout />} />
