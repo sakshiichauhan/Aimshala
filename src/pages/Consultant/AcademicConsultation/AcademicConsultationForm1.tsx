@@ -85,16 +85,16 @@ const AcademicConsultationForm1 = () => {
         <div className="w-[791px] bg-white rounded-lg shadow-lg pt-6 pb-8 px-8 flex flex-col gap-6">
           <div className="rounded-[12px] border border-[#E5E7EB] p-4 flex items-center gap-4">
             <img
-              src={AcademicNew}
+              src={Academic}
               alt="Academic icon"
               className="w-[68px] h-[68px] rounded-[8px] border border-[#E5E7EB]"
             />
             <div>
               <h1 className="text-[32px] font-semibold leading-8 m-0 mb-3">
-                Career Consultation
+              Academic Consultation
               </h1>
               <p className="text-[16px] leading-5 text-[#828282] m-0">
-                Assist in career choices
+              Help with educational planning 
               </p>
             </div>
           </div>
@@ -109,7 +109,7 @@ const AcademicConsultationForm1 = () => {
               placeholder="Enter Expertise Title"
               value={expertiseTitle}
               onChange={(e) => setExpertiseTitle(e.target.value)}
-              className="w-full h-[57px] pt-[14.5px] pb-[14.5px] px-[16px] border-[1px] border-[#DCDCDC] rounded-[8px] focus:outline-none focus:ring-2 focus:ring-[#94278F]/20 placeholder-[#898989] placeholder:text-[18px]"
+              className="w-full h-[57px] pt-[14.5px] pb-[14.5px] px-[16px] border-[1px] border-[#DCDCDC] rounded-[8px] focus:outline-none focus:ring-[#94278F]/20 placeholder-[#898989] placeholder:text-[18px]"
             />
           </div>
   
@@ -124,7 +124,7 @@ const AcademicConsultationForm1 = () => {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               maxLength={250}
-              className="w-full p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-[#94278F]/20 resize-none placeholder-[#898989] placeholder:text-[18px]"
+              className="w-full p-3 rounded-md focus:outline-none  focus:ring-[#94278F]/20 resize-none placeholder-[#898989] placeholder:text-[18px]"
             />
             <div className="text-right text-sm text-[#898989]">
               {description.length} / 250

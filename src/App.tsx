@@ -21,11 +21,12 @@ import KycForm6 from "./pages/Consultant/consultantEkyc/KycForm6";
 import DashboardLayout from "./pages/Consultant/Dashboard/Layout";
 import AcademicConsultationForm1 from "./pages/Consultant/AcademicConsultation/AcademicConsultationForm1";
 import CareerConsultationForm2 from "./pages/Consultant/AcademicConsultation/CareerConsultationForm2";
+import OneOnOneForm6 from "./pages/Consultant/AcademicConsultation/oneononeForm6";;
 
 function AppLayout() {
   const location = useLocation();
 
-  const hideNavbarOnRoutes = ["/academic-consultation","/career-consultation"];
+  const hideNavbarOnRoutes = ["/academic-consultation","/career-consultation","/oneononeForm6"];
 
   const shouldHideNavbar = hideNavbarOnRoutes.includes(location.pathname);
 
@@ -62,6 +63,10 @@ function AppLayout() {
           path="/career-consultation"
           element={<CareerConsultationForm2 />}
         />
+        <Route
+          path="/oneononeForm6"
+          element={<OneOnOneForm6 />}
+          />
 
         <Route path="/consultant/dashboard" element={<DashboardLayout />} />
       </Routes>
