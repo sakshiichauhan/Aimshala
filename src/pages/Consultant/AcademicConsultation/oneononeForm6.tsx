@@ -122,30 +122,30 @@ const OneOnOneForm6 = () => {
             </label>
 
             {haveTimeExtension && (
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-    <div className="relative">
-      <label className="absolute -top-2 left-2 bg-white px-1 text-sm text-[#000000]">
-        Time Extension
-      </label>
-      <select className="w-full p-[14px] border border-[#DCDCDC] rounded-md text-[#898989] text-[18px] focus:outline-none focus:ring-2 focus:ring-[#94278F]/20">
-        <option>Please Select</option>
-        <option>15 Minutes</option>
-        <option>30 Minutes</option>
-      </select>
-    </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                <div className="relative">
+                  <label className="absolute -top-2 left-2 bg-white px-1 text-sm text-[#000000]">
+                    Time Extension
+                  </label>
+                  <select className="w-full p-[14px] border border-[#DCDCDC] rounded-md text-[#898989] text-[18px] focus:outline-none focus:ring-2 focus:ring-[#94278F]/20">
+                    <option>Please Select</option>
+                    <option>15 Minutes</option>
+                    <option>30 Minutes</option>
+                  </select>
+                </div>
 
-    <div className="relative">
-      <label className="absolute -top-2 left-2 bg-white px-1 text-sm text-[#000000]">
-        Time Extension Price (₹)
-      </label>
-      <input
-        type="text"
-        placeholder="Enter Time Extension Price"
-        className="w-full p-[14px] border border-[#DCDCDC] rounded-md focus:outline-none focus:ring-2 focus:ring-[#94278F]/20 text-[#898989] text-[18px] placeholder-[#898989]"
-      />
-    </div>
-  </div>
-)}
+                <div className="relative">
+                  <label className="absolute -top-2 left-2 bg-white px-1 text-sm text-[#000000]">
+                    Time Extension Price (₹)
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Enter Time Extension Price"
+                    className="w-full p-[14px] border border-[#DCDCDC] rounded-md focus:outline-none focus:ring-2 focus:ring-[#94278F]/20 text-[#898989] text-[18px] placeholder-[#898989]"
+                  />
+                </div>
+              </div>
+            )}
           </div>
 
           <div>
@@ -161,8 +161,9 @@ const OneOnOneForm6 = () => {
               </select>
             </div>
           </div>
-
-          <div className="flex justify-center mt-4">
+        </div>
+        <div className="bg-[#F5F5F5] rounded-t-lg flex items-center  px-[24px] py-[16px] w-[791px] h-[78px]  min-h-[60px] px-6">
+          <div className="w-full flex justify-center items-center gap-[10px]">
             <button className="w-[170px] h-[46px] bg-[#94278F] text-white text-[20px] rounded-[12px] hover:bg-[#7A206F] transition-colors">
               Save
             </button>
