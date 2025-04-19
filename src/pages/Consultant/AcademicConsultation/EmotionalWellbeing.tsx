@@ -1,74 +1,65 @@
-import React, { useState } from "react";
-import Academic from "../../../assets/Consultant/BecomeConsultant/image1.png";
+import { useState } from "react";
+import AcademicNew from "../../../assets/Consultant/BecomeConsultant/image4.png";
 
 const areasOfExpertiseList = [
-  { key: "streamSelection", label: "Stream Selection" },
-  { key: "careerPathGuidance", label: "Career Path Guidance" },
-  { key: "collegeSelection", label: "College Selection" },
-  { key: "examPreparation", label: "Exam Preparation" },
-  { key: "studySkills", label: "Study Skills" },
-  { key: "resumeHelp", label: "Resume Help" },
-  { key: "interviewPrep", label: "Interview Prep" },
-  { key: "studyAbroad", label: "Study Abroad" },
-  { key: "peerAndParentalPressure", label: "Peer & Parental Pressure" },
-  { key: "workLifeBalance", label: "Work-Life Balance" },
-  { key: "confidenceBuilding", label: "Confidence Building" },
+  { key: "stressmanagement", label: "Stress Management" },
+  { key: "peerpressure", label: "Peer Pressure" },
+  { key: "anxiety", label: "Anxiety" },
+  { key: "loneliness", label: "Loneliness" },
+  { key: "confidencebuilding", label: "Confidence Building" },
+  { key: "burnout", label: "Burnout" },
+  { key: "worklifebalance", label: "Work-Life Balance" },
+  { key: "buildingresilience", label: "Building Resilience" },
+  { key: "emotionalregulation", label: "Emotional Regulation" },
+  { key: "socialskills", label: "Social Skills" },
 ];
 
 const targetGroupList = [
-  { key: "class5to8", label: "Class 5th-8th" },
-  { key: "class9to10", label: "Class 9th-10th" },
-  { key: "class11to12", label: "Class 11th-12th" },
-  { key: "collegeGraduates", label: "College & Graduates" },
+  { key: "class5to8", label: "Class 5th-8th", category: "student" },
+  { key: "class9to10", label: "Class 9th-10th", category: "student" },
+  { key: "class11to12", label: "Class 11th-12th", category: "student" },
+  { key: "collegeGraduates", label: "College & Graduates", category: "student" },
+  { key: "professionals", label: "Professionals", category: "professional" },
+  { key: "entrepreneurs", label: "Entrepreneurs", category: "professional" },
+  { key: "careerChangers", label: "Career changers", category: "professional" },
+  { key: "homeMakers", label: "Home Makers", category: "professional" },
 ];
 
-const AcademicConsultationForm1 = () => {
+const EmotionalWellbeing = () => {
   const [expertiseTitle, setExpertiseTitle] = useState("");
   const [description, setDescription] = useState("");
 
   const [areasOfExpertise, setAreasOfExpertise] = useState({
-    streamSelection: true,
-    careerPathGuidance: true,
-    interviewPrep: true,
-    studyAbroad: true,
-    collegeSelection: false,
-    examPreparation: false,
-    studySkills: false,
-    resumeHelp: true,
-    peerAndParentalPressure: true,
-    workLifeBalance: true,
-    confidenceBuilding: true,
+    countryselection: true,
+    visaapplication: true,
+    programselection: true,
+    culturaladjustment: true,
+    admissionprocess: true,
+    careeropportunities: true,
+    languageproficiency: true,
+    documentation: true,
+    financialplanning: true,
+    accommodation: true,
   });
 
-  const [targetGroup, setTargetGroup] = useState({
-    class5to8: true,
-    class9to10: true,
-    class11to12: false,
-    collegeGraduates: false,
+ 
+  const initialTargetGroup = targetGroupList.reduce((acc, curr) => ({
+    ...acc,
+    [curr.key]: false
+  }), {
+    professionals: true,
+    entrepreneurs: true, 
   });
 
-  // Updated Checkbox Handler with Validation
+  const [targetGroup, setTargetGroup] = useState(initialTargetGroup);
+
   const handleAreaCheckboxChange = (e) => {
     const { name, checked } = e.target;
-    const selectedCount = Object.values(areasOfExpertise).filter(Boolean).length;
-
-    if (!checked && selectedCount === 1 && areasOfExpertise[name]) {
-      alert("At least one area of expertise must be selected.");
-      return;
-    }
-
     setAreasOfExpertise((prev) => ({ ...prev, [name]: checked }));
   };
 
   const handleTargetGroupChange = (e) => {
     const { name, checked } = e.target;
-    const selectedCount = Object.values(targetGroup).filter(Boolean).length;
-
-    if (!checked && selectedCount === 1 && targetGroup[name]) {
-      alert("At least one target group must be selected.");
-      return;
-    }
-
     setTargetGroup((prev) => ({ ...prev, [name]: checked }));
   };
 
@@ -98,23 +89,25 @@ const AcademicConsultationForm1 = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-[#FFF5FF] to-[#F0F8F8] font-poppins">
       <div className="w-[791px] bg-white rounded-lg shadow-lg">
+        
         <div className="bg-[#F5F5F5] rounded-t-lg flex items-center gap-[16px] min-h-[60px] px-6">
           <h1 className="text-lg font-semibold">Edit Expertise</h1>
         </div>
 
         <div className="pt-6 pb-8 px-8 flex flex-col gap-6">
+         
           <div className="rounded-[12px] border border-[#E5E7EB] p-4 flex items-center gap-4">
             <img
-              src={Academic}
+              src={AcademicNew}
               alt="Academic icon"
               className="w-[68px] h-[68px] rounded-[8px] border border-[#E5E7EB]"
             />
             <div>
               <h1 className="text-[32px] font-semibold leading-8 m-0 mb-3">
-                Academic Consultation
+              Emotional Well-being
               </h1>
               <p className="text-[16px] leading-5 text-[#828282] m-0">
-                Help with educational planning
+              Treat mental health disorders.
               </p>
             </div>
           </div>
@@ -128,7 +121,7 @@ const AcademicConsultationForm1 = () => {
               placeholder="Enter Expertise Title"
               value={expertiseTitle}
               onChange={(e) => setExpertiseTitle(e.target.value)}
-              className="font-poppins w-full h-[57px] pt-[14.5px] pb-[14.5px] px-[16px] border-[1px] border-[#DCDCDC] rounded-[8px] focus:outline-none focus:ring-[#94278F]/20 placeholder-[#898989] placeholder:text-[18px]"
+              className="w-full h-[57px] pt-[14.5px] pb-[14.5px] px-[16px] border-[1px] border-[#DCDCDC] rounded-[8px] focus:outline-none focus:ring-[#94278F]/20 placeholder-[#898989] placeholder:text-[18px] font-poppins"
             />
           </div>
 
@@ -137,7 +130,6 @@ const AcademicConsultationForm1 = () => {
               Description
             </label>
             <textarea
-              rows={2}
               placeholder="Enter Description about expertise"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
@@ -173,28 +165,59 @@ const AcademicConsultationForm1 = () => {
           </section>
 
           <section>
-            <div className="flex flex-col gap-2 mb-3">
-              <h2 className="text-lg font-semibold">Target Group</h2>
-              <div className="text-[16px] font-semibold text-[#787878]">
-                Students
+            <h2 className="text-lg font-semibold mb-3">Target Group</h2>
+            <div className="grid grid-cols-2 gap-x-10">
+              {/* Students Column */}
+              <div>
+                <div className="text-[16px] font-semibold text-[#787878] mb-3">
+                  Students
+                </div>
+                <div className="flex flex-col gap-y-4">
+                  {targetGroupList
+                    .filter(item => item.category === 'student')
+                    .map(({ key, label }) => (
+                      <label
+                        key={key}
+                        className="flex items-center gap-2 text-[18px] text-[#898989] whitespace-nowrap"
+                      >
+                        <input
+                          type="checkbox"
+                          name={key}
+                          checked={targetGroup[key]}
+                          onChange={handleTargetGroupChange}
+                          className={checkboxClass}
+                        />
+                        {label}
+                      </label>
+                    ))}
+                </div>
               </div>
-            </div>
-            <div className="grid grid-cols-3 gap-x-10 gap-y-4">
-              {targetGroupList.map(({ key, label }) => (
-                <label
-                  key={key}
-                  className="flex items-center gap-2 text-[18px] text-[#898989] whitespace-nowrap"
-                >
-                  <input
-                    type="checkbox"
-                    name={key}
-                    checked={targetGroup[key]}
-                    onChange={handleTargetGroupChange}
-                    className={checkboxClass}
-                  />
-                  {label}
-                </label>
-              ))}
+
+              {/* Professionals Column */}
+              <div>
+                <div className="text-[16px] font-semibold text-[#787878] mb-3">
+                  Professionals
+                </div>
+                <div className="flex flex-col gap-y-4">
+                  {targetGroupList
+                    .filter(item => item.category === 'professional')
+                    .map(({ key, label }) => (
+                      <label
+                        key={key}
+                        className="flex items-center gap-2 text-[18px] text-[#898989] whitespace-nowrap"
+                      >
+                        <input
+                          type="checkbox"
+                          name={key}
+                          checked={targetGroup[key]}
+                          onChange={handleTargetGroupChange}
+                          className={checkboxClass}
+                        />
+                        {label}
+                      </label>
+                    ))}
+                </div>
+              </div>
             </div>
           </section>
         </div>
@@ -220,4 +243,4 @@ const AcademicConsultationForm1 = () => {
   );
 };
 
-export default AcademicConsultationForm1;
+export default EmotionalWellbeing;
