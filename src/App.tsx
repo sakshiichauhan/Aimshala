@@ -32,6 +32,7 @@ import CommunityForm2 from "./pages/Consultant/Community/CommunityForm2";
 import Community1 from "./pages/Consultant/Community/Community1";
 import Resources1 from "./pages/Consultant/Resources/Resources1";
 import TrendingCareers from "./pages/Consultant/Resources/TrendingCareers";
+import Footer from "./layout/Footer"
 function AppLayout() {
   const location = useLocation();
 
@@ -47,6 +48,7 @@ function AppLayout() {
     "/doubtpucho",
     "/resources1",
     "/trendingcareers",
+    "/footer"
   ];
 
   const shouldHideNavbar = hideNavbarOnRoutes.includes(location.pathname);
@@ -92,8 +94,10 @@ function AppLayout() {
         <Route path="/communityform2" element={<CommunityForm2 />} />
         <Route path="/community1" element={<Community1 />} />
         <Route path="/resources1" element={<Resources1 />} />
+        <Route path="/footer" element={<Footer />} />
         <Route path="/trendingcareers" element={<TrendingCareers />} />
         <Route path="/consultant/dashboard" element={<DashboardLayout />} />
+
       </Routes>
     </>
   );
