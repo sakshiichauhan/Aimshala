@@ -1,16 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './index.css';
 import { ClerkProvider } from '@clerk/clerk-react';
-import { dark, neobrutalism, shadesOfPurple } from '@clerk/themes'
+import { dark, neobrutalism, shadesOfPurple } from '@clerk/themes';
 import store from './store/store';
+import 'react-big-calendar/lib/css/react-big-calendar.css'; // Ensure this path is correct
 import { Provider } from 'react-redux';
 
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
 if (!PUBLISHABLE_KEY) {
-  throw new Error("Missing Publishable Key")
+  throw new Error("Missing Publishable Key");
 }
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -32,4 +33,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       </ClerkProvider>
     </Provider>
   </React.StrictMode>,
-)
+);

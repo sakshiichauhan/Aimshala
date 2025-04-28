@@ -32,7 +32,27 @@ import CommunityForm2 from "./pages/Consultant/Community/CommunityForm2";
 import Community1 from "./pages/Consultant/Community/Community1";
 import Resources1 from "./pages/Consultant/Resources/Resources1";
 import TrendingCareers from "./pages/Consultant/Resources/TrendingCareers";
-import Footer from "./layout/Footer"
+import EditProfile1 from "./pages/Consultant/ProfilePopups/EditProfile1";
+import Footer from "./layout/Footer";
+import Paymentform from "./pages/Consultant/ProfilePopups/Form/Paymentform";
+import EditProfile2 from "./pages/Consultant/ProfilePopups/Form/Editprofile2";
+import AddEduction from "./pages/Consultant/ProfilePopups/Form/AddEduction";
+import AddExperience from "./pages/Consultant/ProfilePopups/Form/AddExperience";
+import CreateOrganisation from "./pages/Consultant/ProfilePopups/Form/CreateOrganisation";
+import AddProject from "./pages/Consultant/ProfilePopups/Form/AddProject";
+import AddSkill from "./pages/Consultant/ProfilePopups/Form/AddSkill";
+import AddHonors from "./pages/Consultant/ProfilePopups/Form/AddHonors";
+import AddLicense from "./pages/Consultant/ProfilePopups/Form/AddLicense";
+import AddPublication from "./pages/Consultant/ProfilePopups/Form/AddPublication";
+import AddVolunteer from "./pages/Consultant/ProfilePopups/Form/AddVolunteer";
+import AddLanguage from "./pages/Consultant/ProfilePopups/Form/AddLanguage";
+import AddCourse from "./pages/Consultant/ProfilePopups/Form/AddCourse";
+import Check from "./pages/Consultant/ProfilePopups/Form/Check";
+import AddMedia from "./pages/Consultant/ProfilePopups/Form/AddMedia";
+import Discard from "./pages/Consultant/ProfilePopups/Form/Discard";
+import Contactform1 from "./pages/Consultant/ProfilePopups/Form/Contactform1";
+import Calender from "./pages/Calendar/Calender";
+
 function AppLayout() {
   const location = useLocation();
 
@@ -48,7 +68,26 @@ function AppLayout() {
     "/doubtpucho",
     "/resources1",
     "/trendingcareers",
-    "/footer"
+    "/footer",
+    "/editprofile1",
+    "/calendar",
+    "/contactform1",
+    "/paymentform",
+    "/editprofile2",
+    "/addeducation",
+    "/addexperience",
+    "/createorganisation",
+    "/addproject",
+    "/addskill",
+    "/addhonors",
+    "/addlicense",
+    "/addpublication",
+    "/addvolunteer",
+    "/addcourse",
+    "/addlanguage",
+    "/check",
+    "/addmedia",
+    "/discard",
   ];
 
   const shouldHideNavbar = hideNavbarOnRoutes.includes(location.pathname);
@@ -96,8 +135,28 @@ function AppLayout() {
         <Route path="/resources1" element={<Resources1 />} />
         <Route path="/footer" element={<Footer />} />
         <Route path="/trendingcareers" element={<TrendingCareers />} />
-        <Route path="/consultant/dashboard" element={<DashboardLayout />} />
+        <Route path="/editprofile1" element={<EditProfile1 />} />
+        <Route path="/contactform1" element={<Contactform1 />} />
+        <Route path="/paymentform" element={<Paymentform />} />
+        <Route path="/editprofile2" element={<EditProfile2 />} />
 
+        <Route path="/addeducation" element={<AddEduction />} />
+        <Route path="/addexperience" element={<AddExperience />} />
+        <Route path="/createorganisation" element={<CreateOrganisation />} />
+        <Route path="/addproject" element={<AddProject />} />
+        <Route path="/addskill" element={<AddSkill />} />
+        <Route path="/addhonors" element={<AddHonors />} />
+        <Route path="/addlicense" element={<AddLicense />} />
+        <Route path="/addpublication" element={<AddPublication />} />
+        <Route path="/addvolunteer" element={<AddVolunteer />} />
+        <Route path="/addlanguage" element={<AddLanguage />} />
+        <Route path="/addcourse" element={<AddCourse />} />
+        <Route path="/check" element={<Check />} />
+        <Route path="/addmedia" element={<AddMedia />} />
+        <Route path="/discard" element={<Discard />} />
+        
+        <Route path="/consultant/dashboard" element={<DashboardLayout />} />
+        <Route path="/calendar" element={<Calender />} />
       </Routes>
     </>
   );

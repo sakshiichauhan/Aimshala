@@ -198,8 +198,7 @@ const AcademicConsultationForm1 = () => {
             </div>
           </section>
         </div>
-
-        <div className="bg-[#F5F5F5] rounded-b-lg flex items-center justify-between px-[24px] py-[16px] w-[791px] h-[78px]">
+  <div className="bg-[#F5F5F5] rounded-b-lg flex items-center justify-between px-[24px] py-[16px] w-[791px] h-[78px]">
           <button
             onClick={handleDelete}
             className="text-[#000000] text-[18px] font-medium hover:text-red-700"
@@ -214,6 +213,7 @@ const AcademicConsultationForm1 = () => {
               Save
             </button>
           </div>
+      
         </div>
       </div>
     </div>
